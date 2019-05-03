@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const mongoURI = require('./mongURI')
+const mongoURI = require('./url')
 const ENV = require('../dotenv')
 
 /** 
