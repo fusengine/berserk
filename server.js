@@ -1,16 +1,23 @@
-const { app, portBerserk, database } = require('./config')
-const { api } = require('./routes/')
+const path = require('path')
+const express = require('express')
+const { api, app, database, portBerserk, route } = require('./config')
 
 /** Connect on your database */
 database()
 
-/** Read base File */
-app.get('/', (req, res) => {
-	res.send('Api En marche!')
-})
+// set the view engine to ejs
+app.set('views', path.join(__dirname, 'views'))
+app.set('view engine', 'ejs')
 
-/** Listen api file */
+/** Build middleware Function */
+app.use(express.urlencoded({ extended: true }))
+app.use(express.json({ extended: false }))
+
+/** 
+ * Listen api and route 
+ */
 app.use('/api', api)
+app.use('/', route)
 
 /** Define port Listen */
 portBerserk()

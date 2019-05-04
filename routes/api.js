@@ -1,13 +1,7 @@
-const router = require('express').Router()
-
-/** Import Controller */
-const user = require('../app/Controller/users')
+const api = require('express').Router()
 
 /** Use Router */
-router.use('/users', user)
-router.use('/exemple', (req, res) => {
-	res.send('My exemple')
-})
+api.use('/', require('../app/controller/users'))
 
 /** Export Module */
-module.exports = router
+module.exports = api

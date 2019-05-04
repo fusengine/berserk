@@ -15,6 +15,7 @@ const mongoOption = 'retryWrites=true'
 const mongoURI = (user, pass, host, port, dbname) => {
 	const withUserPass = `${mongoSRV}://${user}:${pass}@${host}:${port}/${dbname}?${mongoOption}`
 	const withOutUserPAss = `${mongoSRV}://${host}:${port}/${dbname}?${mongoOption}`
+
 	// Check is user enter password and username
 	if (user && pass) {
 		return withUserPass

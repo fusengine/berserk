@@ -34,7 +34,7 @@ const ConnectDB = async () => {
 		return console.log(err)
 
 		// console.error(error.message)
-		// // Sort du prossecus en cas d'erreur
+		//  Sort du prossecus en cas d'erreur
 		// process.exit(1)
 	}
 }

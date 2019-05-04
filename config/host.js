@@ -6,7 +6,10 @@ const ENV = require('./dotenv')
  * @param {Number} port Number port
  */
 const PORT = (portNb) => ENV.PORT || portNb
-const ip = '0.0.0.0' // Define ip
+
+/**
+ * Port Define
+ */
 const PORT_APP = ENV.APP_PORT_LISTEN
 
 /**
@@ -18,12 +21,12 @@ const portBerserk = () => {
 	try {
 		// Try if port is define in file .env
 		if (PORT_APP) {
-			app.listen(PORT(PORT_APP), ip, () => {
+			app.listen(PORT(PORT_APP), () => {
 				console.log(`Le serveur démarre sur le port ${PORT_APP}`)
 			})
 		} else {
 			// Default port listen
-			app.listen(PORT(5000), ip, () => {
+			app.listen(PORT(5000), () => {
 				console.log(`Le serveur démarre sur le port ${5000}`)
 			})
 		}
