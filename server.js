@@ -11,7 +11,15 @@ app.set('view engine', 'ejs')
 
 /** Build middleware Function */
 app.use(express.urlencoded({ extended: true }))
-app.use(express.json({ extended: false }))
+app.use(express.json())
+
+/** Permet d'accepter les requetes */
+app.use(function (req, res, next) {
+	res.header('Access-Control-Allow-Origin', '*')
+	res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
+	res.header('Access-Control-Allow-Methods', 'PUT, OPTIONS, GET, POST, DELETE')
+	next()
+})
 
 /** 
  * Listen api and route 
