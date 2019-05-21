@@ -1,4 +1,4 @@
-const { Database, BuildMiddleware, Headers, Host, ViewEngine, Route } = require('./config/lib')
+const { Database, BuildMiddleware, Headers, Host, ViewEngine, Route } = require('./lib')
 
 /** 
  * Connect on your database 

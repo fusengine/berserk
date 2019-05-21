@@ -2,10 +2,10 @@
 	"name": "berserk",
 	"version": "1.0.0",
 	"description": "Starter node from api node",
-	"main": "Berserk.js",
+	"main": "config/Berserk.js",
 	"scripts": {
-		"start": "node Berserk",
-		"server": "nodemon Berserk",
+		"start": "node config/Berserk",
+		"server": "nodemon config/Berserk",
 		"dev": "concurrently \"yarn run server\""
 	},
 	"author": "Bruno Azoulay <info@fusengine.ch>",
