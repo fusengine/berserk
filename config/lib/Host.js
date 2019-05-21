@@ -1,4 +1,4 @@
-const { app, ENV } = require('../berserk_lib/conf')
+const { app, ENV } = require('./Default')
 
 /**
  * PORT Definit le port a utiliser
@@ -16,17 +16,17 @@ const PORT_APP = ENV.APP_PORT_LISTEN
  * Define port to listen your app
  * @param {Number} portListen Enter your port listen
  */
-const PortBerserk = () => {
+const Host = async () => {
 	try {
 		// Try if port is define in file .env
 		if (PORT_APP) {
-			app.listen(PORT(PORT_APP), () => {
-				console.log(`Le serveur démarre sur le port ${PORT_APP}`)
+			await app.listen(PORT(PORT_APP), () => {
+				console.log(`Berserk is listening port ${PORT_APP}`)
 			})
 		} else {
 			// Default port listen
-			app.listen(PORT(5000), () => {
-				console.log(`Le serveur démarre sur le port ${5000}`)
+			await app.listen(PORT(5000), () => {
+				console.log(`Berserk is listening port ${5000}`)
 			})
 		}
 	} catch (error) {
@@ -34,4 +34,4 @@ const PortBerserk = () => {
 	}
 }
 
-module.exports = PortBerserk
+module.exports = Host

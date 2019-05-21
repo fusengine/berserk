@@ -1,7 +1,6 @@
 const api = require('express').Router()
 
-/** Use Router */
-api.use('/', require('../app/controller/users'))
+api.use('/', require('../app/Controller/api/welcome'))
 
 /** Export Module */
 module.exports = api

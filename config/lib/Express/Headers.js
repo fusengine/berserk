@@ -1,15 +1,15 @@
-const { app } = require('../conf')
+const { app } = require('../Default')
 const { header } = require('../../config')
 
 /**
- * HeaderBerserk
+ * Header
  * Define header request
  */
-const HeaderBerserk = () => {
+const Headers = async () => {
 	try {
 		if (header) {
 			/** Accept request header */
-			app.use((req, res, next) => {
+			await app.use((req, res, next) => {
 				res.header('Access-Control-Allow-Origin', header.origine)
 				res.header('Access-Control-Allow-Headers', header.headers)
 				res.header('Access-Control-Allow-Methods', header.method)
@@ -17,7 +17,7 @@ const HeaderBerserk = () => {
 			})
 		} else {
 			/** Accept request header */
-			app.use((req, res, next) => {
+			await app.use((req, res, next) => {
 				res.header('Access-Control-Allow-Origin', '*')
 				res.header(
 					'Access-Control-Allow-Headers',
@@ -32,4 +32,4 @@ const HeaderBerserk = () => {
 	}
 }
 
-module.exports = HeaderBerserk
+module.exports = Headers

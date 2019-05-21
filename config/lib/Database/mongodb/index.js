@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const mongoURI = require('./url')
-const { ENV } = require('../../conf.js')
+const { ENV } = require('../../Default')
 
 /** 
  * db
@@ -28,9 +28,9 @@ const db = mongoose.connect(
 const ConnectDB = async () => {
 	try {
 		await db
-		console.log('MONGODB connected')
+		console.log('Berserk connected on mongodb ')
 	} catch (error) {
-		const err = `MONGODB no connected: ${error.message}`
+		const err = `Berserk not connected on mongodb: ${error.message}`
 		return console.log(err)
 
 		// console.error(error.message)
