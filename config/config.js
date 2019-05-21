@@ -5,6 +5,7 @@ const header = {
 	origine: '*',
 	headers: 'Origin, X-Requested-With, Content-Type, Accept, token',
 	method: 'PUT, POST, GET, DELETE, OPTIONS',
+	credentials: true,
 }
 
 /**

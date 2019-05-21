@@ -2,11 +2,11 @@ const express = require('express')
 const { app } = require('../Default')
 
 /** Build middleware express */
-const BuildMiddleware = async () => {
+const BuildMiddleware = () => {
 	try {
 		/** Build middleware Function */
-		await app.use(express.urlencoded({ extended: true }))
-		await app.use(express.json())
+		app.use(express.urlencoded({ extended: true }))
+		app.use(express.json())
 	} catch (error) {
 		console.error(error)
 	}
