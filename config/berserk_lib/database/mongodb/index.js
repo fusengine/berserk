@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 const mongoURI = require('./url')
-const ENV = require('../dotenv')
+const { ENV } = require('../../conf.js')
 
 /** 
  * db
@@ -17,7 +17,7 @@ const db = mongoose.connect(
 	{
 		useNewUrlParser: true,
 		useCreateIndex: true,
-		useFindAndModify: false
+		useFindAndModify: false,
 	}
 )
 

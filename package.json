@@ -1,5 +1,5 @@
 {
-	"name": "Node_Framework_Starter",
+	"name": "berserk",
 	"version": "1.0.0",
 	"description": "Starter node from api node",
 	"main": "server.js",
@@ -15,11 +15,12 @@
 		"config": "^3.1.0",
 		"dotenv": "^8.0.0",
 		"ejs": "^2.6.1",
-		"express": "^4.16.4",
+		"express": "^4.17.0",
 		"express-validator": "^5.3.1",
 		"gravatar": "^1.8.0",
 		"jsonwebtoken": "^8.5.1",
-		"mongoose": "^5.5.5",
+		"mongoose": "^5.5.10",
+		"pug": "^2.0.3",
 		"request": "^2.88.0"
 	},
 	"devDependencies": {

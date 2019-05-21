@@ -1,11 +1,10 @@
-const app = require('./app')
-const ENV = require('./dotenv')
+const { app, ENV } = require('../berserk_lib/conf')
 
 /**
  * PORT Definit le port a utiliser
  * @param {Number} port Number port
  */
-const PORT = (portNb) => ENV.PORT || portNb
+const PORT = portNb => ENV.PORT || portNb
 
 /**
  * Port Define
