@@ -1,17 +1,19 @@
-const portBerserk = require('./host')
-const database = require('./database/mongodb')
+const PortBerserk = require('./host')
 const { app, ENV } = require('./conf')
-const api = require('../../routes/api')
-const viewBerserkEngine = require('./http/views')
-const route = require('../../routes/route')
+const HeaderBerserk = require('./http/header')
+const RouteBerserk = require('./RouteBerserk')
+const database = require('./database/mongodb')
+const ViewBerserkEngine = require('./http/views')
+const BuildExpressMiddleware = require('./http/BuildExpressMiddleware')
 
 /** Options to export modules */
 module.exports = {
-	api,
 	app,
 	database,
 	ENV,
-	portBerserk,
-	route,
-	viewBerserkEngine,
+	PortBerserk,
+	ViewBerserkEngine,
+	HeaderBerserk,
+	BuildExpressMiddleware,
+	RouteBerserk,
 }

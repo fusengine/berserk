@@ -16,7 +16,7 @@ const PORT_APP = ENV.APP_PORT_LISTEN
  * Define port to listen your app
  * @param {Number} portListen Enter your port listen
  */
-const portBerserk = () => {
+const PortBerserk = () => {
 	try {
 		// Try if port is define in file .env
 		if (PORT_APP) {
@@ -34,4 +34,4 @@ const portBerserk = () => {
 	}
 }
 
-module.exports = portBerserk
+module.exports = PortBerserk
