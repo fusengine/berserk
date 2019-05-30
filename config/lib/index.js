@@ -1,20 +1,21 @@
 const Host = require('./Host')
-const { app, ENV } = require('./Default')
+const app = require('./Default')
 const Route = require('./Route')
 const Database = require('./Database/mongodb')
 
+const Static = require('../lib/Express/Static')
 const Headers = require('./Express/Headers')
 const ViewEngine = require('./Express/ViewEngine')
-const BuildMiddleware = require('./Express/BuildMiddleware')
+const Middleware = require('./Express/Middleware')
 
 /** Options to export modules */
 module.exports = {
 	app,
 	Database,
-	ENV,
 	Host,
 	ViewEngine,
+	Static,
 	Headers,
-	BuildMiddleware,
+	Middleware,
 	Route,
 }

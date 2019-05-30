@@ -1,16 +1,16 @@
 const api = require('../../routes/api')
+const app = require('./Default')
 const route = require('../../routes/route')
-const { app } = require('./Default')
-const { routerPath } = require('../config.js')
+const berserkConf = require('../config.js')
 
 /**
  * Define initial route to run api 
  * and default route
  */
-const Route = async () => {
+const Route = () => {
 	try {
-		await app.use(routerPath.api, api)
-		await app.use(routerPath.route, route)
+		app.use(berserkConf.routerPath.api, api)
+		app.use(berserkConf.routerPath.route, route)
 	} catch (error) {
 		console.error(error)
 	}

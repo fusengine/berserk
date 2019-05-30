@@ -1,5 +1,5 @@
-const { app } = require('../Default')
-const { header } = require('../../config')
+const app = require('../Default')
+const berserkConf = require('../../config')
 
 /**
  * Header
@@ -9,10 +9,10 @@ const Headers = () => {
 	try {
 		/** Accept request header */
 		app.use((req, res, next) => {
-			res.header('Access-Control-Allow-Origin', header.origine)
-			res.header('Access-Control-Allow-Headers', header.headers)
-			res.header('Access-Control-Allow-Methods', header.method)
-			res.header('Access-Control-Allow-Credentials', header.credentials)
+			res.header('Access-Control-Allow-Origin', berserkConf.header.origine)
+			res.header('Access-Control-Allow-Headers', berserkConf.header.headers)
+			res.header('Access-Control-Allow-Methods', berserkConf.header.method)
+			res.header('Access-Control-Allow-Credentials', berserkConf.header.credentials)
 			next()
 		})
 	} catch (error) {

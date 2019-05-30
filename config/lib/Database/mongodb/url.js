@@ -5,14 +5,14 @@ const mongoSRV = 'mongodb'
 const mongoOption = 'retryWrites=true'
 
 /**
- * mongoURI defin url to connect in your app
+ * mongoURI define url to connect in your app
  * @param {String} user User database
  * @param {String} pass Password database
  * @param {String} host Url database
  * @param {Number} port Port database   
  * @param {String} dbname Name database
  */
-const mongoURI = (user, pass, host, port, dbname) => {
+const mongoURI = (host, port, dbname, user, pass) => {
 	const withUserPass = `${mongoSRV}://${user}:${pass}@${host}:${port}/${dbname}?${mongoOption}`
 	const withOutUserPAss = `${mongoSRV}://${host}:${port}/${dbname}?${mongoOption}`
 

@@ -1,4 +1,4 @@
-const { Database, BuildMiddleware, Headers, Host, ViewEngine, Route } = require('./lib')
+const { Database, Middleware, Headers, Host, ViewEngine, Route, Static } = require('./lib')
 
 /** 
  * Connect on your database 
@@ -13,7 +13,9 @@ ViewEngine()
 /** 
  * Build middleware Function 
  */
-BuildMiddleware()
+Middleware()
+
+Static()
 
 /** 
  * define to accepte Request 

@@ -1,6 +1,6 @@
 const path = require('path')
-const { app } = require('../Default')
-const { view } = require('../../config')
+const app = require('../Default')
+const berserkConf = require('../../config')
 
 /**
   * viewBerserkEngine
@@ -8,9 +8,9 @@ const { view } = require('../../config')
   */
 const ViewEngine = () => {
 	try {
-		if (view.path) {
+		if (berserkConf.view.path) {
 			// Define directory views
-			const pathDir = path.join(__dirname, `../../../${view.path}`)
+			const pathDir = path.join(__dirname, `../../../${berserkConf.view.path}`)
 
 			// Define views file
 			app.set('views', pathDir)
@@ -23,8 +23,8 @@ const ViewEngine = () => {
 		}
 
 		// Try if user add extension
-		if (view.extention) {
-			app.set('view engine', view.extention)
+		if (berserkConf.view.extension) {
+			app.set('view engine', berserkConf.view.extension)
 		} else {
 			app.set('view engine', 'ejs')
 		}

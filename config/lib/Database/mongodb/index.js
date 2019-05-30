@@ -1,23 +1,23 @@
 const mongoose = require('mongoose')
 const mongoURI = require('./url')
-const { ENV } = require('../../Default')
+const berserkConf = require('../../../config')
 
 /** 
  * db
- * Get paramaters information in .env 
+ * Get parameters information in .env 
  */
 const db = mongoose.connect(
 	mongoURI(
-		ENV.MONGODB_USER,
-		ENV.MONGODB_PASS,
-		ENV.MONGODB_HOST,
-		ENV.MONGODB_PORT,
-		ENV.MONGODB_NAME
+		berserkConf.mongodb.host,
+		berserkConf.mongodb.port,
+		berserkConf.mongodb.dbname,
+		berserkConf.mongodb.user,
+		berserkConf.mongodb.password
 	),
 	{
-		useNewUrlParser: true,
-		useCreateIndex: true,
-		useFindAndModify: false,
+		useNewUrlParser: berserkConf.mongodb.config.newUrlParser,
+		useCreateIndex: berserkConf.mongodb.config.useCreateIndex,
+		useFindAndModify: berserkConf.mongodb.config.useFindAndModify,
 	}
 )
 
@@ -34,7 +34,7 @@ const ConnectDB = async () => {
 		return console.log(err)
 
 		// console.error(error.message)
-		//  Sort du prossecus en cas d'erreur
+		//  Sort du processus en cas d'erreur
 		// process.exit(1)
 	}
 }

@@ -1,31 +1,52 @@
-/**
- * Define Header request to api
- */
-const header = {
-	origine: '*',
-	headers: 'Origin, X-Requested-With, Content-Type, Accept, token',
-	method: 'PUT, POST, GET, DELETE, OPTIONS',
-	credentials: true,
+/** Default config to berserk app */
+const berserkConf = {
+	/** Port to listen application default 5000 */
+	portApp: '',
+
+	/** Define path and extension to render views html default ejs*/
+	view: {
+		path: 'views',
+		extension: 'ejs',
+	},
+
+	/** Define assets to read css, js and name path to views */
+	assets: {
+		dirAssets: '',
+		nameAssets: '',
+	},
+
+	/** JWT Secret key */
+	secretKeyJWT: '',
+
+	/** Define route path */
+	routerPath: {
+		api: '/api',
+		route: '/',
+	},
+
+	/** Define Header Request */
+	header: {
+		origine: '*',
+		headers: 'Origin, X-Requested-With, Content-Type, Accept, token',
+		method: 'PUT, POST, GET, DELETE, OPTIONS',
+		credentials: true,
+	},
+
+	/** Mongo db */
+	mongodb: {
+		host: '',
+		port: '',
+		dbname: '',
+		user: '',
+		password: '',
+
+		/** Config Mongo */
+		config: {
+			newUrlParser: true,
+			useCreateIndex: true,
+			useFindAndModify: false,
+		},
+	},
 }
 
-/**
- * Route define path to route 
- */
-const routerPath = {
-	api: '/api',
-	route: '/',
-}
-
-/**
- * Define path and extension to render views thml
- */
-const view = {
-	path: 'views',
-	extention: 'ejs',
-}
-
-module.exports = {
-	header,
-	view,
-	routerPath,
-}
+module.exports = berserkConf
