@@ -15,6 +15,9 @@ ViewEngine()
  */
 Middleware()
 
+/** 
+ * Define add a Static file
+ */
 Static()
 
 /** 

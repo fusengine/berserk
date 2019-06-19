@@ -1,7 +1,8 @@
 const app = require('./Default')
 const berserkConf = require('../config')
+
 /**
- * PORT Définit le port a utiliser
+ * PORT define to use
  * @param {Number} portNb Number port
  */
 const PORT = portNb => process.env.PORT || portNb
