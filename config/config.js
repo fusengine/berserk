@@ -16,7 +16,9 @@ const berserkConf = {
 	},
 
 	/** JWT Secret key */
-	secretKeyJWT: '',
+	secretKey: {
+		JWT: '',
+	},
 
 	/** Define route path */
 	routerPath: {

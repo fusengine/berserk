@@ -8,6 +8,8 @@ const Headers = require('./Express/Headers')
 const ViewEngine = require('./Express/ViewEngine')
 const Middleware = require('./Express/Middleware')
 
+const Morgan = require('./Express/Morgan')
+
 /** Options to export modules */
 module.exports = {
 	app,
@@ -17,5 +19,6 @@ module.exports = {
 	Static,
 	Headers,
 	Middleware,
+	Morgan,
 	Route,
 }

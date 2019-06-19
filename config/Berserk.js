@@ -1,4 +1,4 @@
-const { Database, Middleware, Headers, Host, ViewEngine, Route, Static } = require('./lib')
+const { Database, Headers, Host, Morgan, Middleware, ViewEngine, Route, Static } = require('./lib')
 
 /** 
  * Connect on your database 
@@ -24,6 +24,9 @@ Static()
  * define to accepte Request 
  */
 Headers()
+
+/** Morgan */
+Morgan()
 
 /** 
  * Listen api and route 

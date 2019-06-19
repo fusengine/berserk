@@ -1,6 +1,7 @@
 const path = require('path')
 const app = require('../Default')
 const berserkConf = require('../../config')
+const engine = require('ejs-mate')
 
 /**
   * viewBerserkEngine
@@ -24,8 +25,17 @@ const ViewEngine = () => {
 
 		// Try if user add extension
 		if (berserkConf.view.extension) {
-			app.set('view engine', berserkConf.view.extension)
+			// Define layout to pug
+			if (berserkConf.view.extension === 'pug') {
+				app.set('view engine', berserkConf.view.extension)
+			}
+			// Define layout to ejs
+			if (berserkConf.view.extension === 'ejs') {
+				app.engine('ejs', engine)
+				app.set('view engine', berserkConf.view.extension)
+			}
 		} else {
+			app.engine('ejs', engine)
 			app.set('view engine', 'ejs')
 		}
 	} catch (error) {
