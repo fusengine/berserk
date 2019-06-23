@@ -1,5 +1,5 @@
 const jwt = require('jsonwebtoken')
-const { ENV } = require('../../config/lib/Default')
+const { secretKey } = require('../../config/config')
 
 /**
  * Auth
@@ -12,12 +12,12 @@ const Authentification = (req, res, next) => {
 
 	// Verifie si on n'a pas pas de token
 	if (!token) {
-		return res.status(401).json({ msg: 'Pas de token, Authorisation Refusé.' })
+		return res.status(401).json({ msg: 'Authorisation Refusé.' })
 	}
 
 	// Vérifie le token
 	try {
-		const decoded = jwt.verify(token, ENV.SECRET_KEY_JWT)
+		const decoded = jwt.verify(token, secretKey.JWT)
 
 		/**
          * La requete utilisateur decode 
@@ -26,7 +26,7 @@ const Authentification = (req, res, next) => {
 		req.user = decoded.user
 		next()
 	} catch (error) {
-		res.status(401).json({ msg: "Le Token n'est pas valide." })
+		res.status(401).json({ msg: 'Authorisation invalide.' })
 	}
 }
 
