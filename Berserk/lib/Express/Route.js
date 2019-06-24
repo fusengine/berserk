@@ -1,6 +1,6 @@
 const app = require('../app')
 const apiBerserk = require('../../../routes/api')
-const routeBerserk = require('../../../routes/route')
+const webBerserk = require('../../../routes/web')
 const Config = require('../../Config.js').routerPath
 
 /** Destruturation */
@@ -13,7 +13,7 @@ const { api, route } = Config
 const Route = () => {
 	try {
 		app.use(api, apiBerserk)
-		app.use(route, routeBerserk)
+		app.use(route, webBerserk)
 	} catch (error) {
 		console.error(error)
 	}
