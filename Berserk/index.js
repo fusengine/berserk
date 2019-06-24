@@ -1,9 +1,9 @@
-const { Database, Headers, Host, Morgan, Middleware, ViewEngine, Route, Static } = require('./lib')
+const { Headers, Host, MongoDB, Morgan, Middleware, ViewEngine, Route, Static } = require('./lib')
 
 /** 
  * Connect on your database 
  */
-Database()
+MongoDB()
 
 /** 
  * Define engine use 

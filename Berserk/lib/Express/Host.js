@@ -1,5 +1,5 @@
-const app = require('./Default')
-const berserkConf = require('../config')
+const app = require('../app')
+const Config = require('../../Config').portApp
 
 /**
  * PORT define to use
@@ -10,7 +10,7 @@ const PORT = portNb => process.env.PORT || portNb
 /**
  * Port Define
  */
-const PORT_APP = berserkConf.portApp
+const PORT_APP = Config
 
 /**
  * portBerserk 
@@ -27,7 +27,7 @@ const Host = () => {
 		} else {
 			// Default port listen
 			app.listen(PORT(5000), () => {
-				console.log(`Berserk is listening port ${5000}`)
+				console.log(`Berserk is listening : 'http://localhost:${5000}'`)
 			})
 		}
 	} catch (error) {

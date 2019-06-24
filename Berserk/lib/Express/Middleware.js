@@ -1,5 +1,5 @@
 const express = require('express')
-const app = require('../Default')
+const app = require('../app')
 
 /** Build middleware express */
 const BuildMiddleware = () => {

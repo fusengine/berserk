@@ -1,16 +1,13 @@
-const app = require('../Default')
+const app = require('../app')
 const express = require('express')
 const path = require('path')
-const berserkConf = require('../../config')
+const Config = require('../../Config').assets
+
+/** Destruturation */
+const { dir, name } = Config
 
 /** Define a static file to add css and js */
 const Static = () => {
-	/** Define path Directory to read file css and js */
-	let dir = berserkConf.assets.dirAssets
-
-	/** define name to put on your html eg: <link href="/assets/css/" rel="stylesheet"> */
-	let name = berserkConf.assets.nameAssets
-
 	try {
 		/** if directory to put your file is define */
 		if (dir) {

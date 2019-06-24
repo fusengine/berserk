@@ -1,23 +1,28 @@
 /** Default config to berserk app */
-const berserkConf = {
+module.exports = {
 	/** Port to listen application default 5000 */
 	portApp: '',
 
 	/** Define path and extension to render views html default ejs*/
 	view: {
-		path: 'views',
+		pathBerserk: 'views',
 		extension: 'ejs',
 	},
 
 	/** Define assets to read css, js and name path to views */
 	assets: {
-		dirAssets: '',
-		nameAssets: '',
+		dir: '',
+		name: '',
+	},
+
+	/** Define morgan */
+	morgan: {
+		conf: 'dev',
 	},
 
 	/** JWT Secret key */
-	secretKey: {
-		JWT: '',
+	secret: {
+		jwtKey: '',
 	},
 
 	/** Define route path */
@@ -50,5 +55,3 @@ const berserkConf = {
 		},
 	},
 }
-
-module.exports = berserkConf

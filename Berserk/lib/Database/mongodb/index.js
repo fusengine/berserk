@@ -1,25 +1,26 @@
 const mongoose = require('mongoose')
-const mongoURI = require('./url')
-const berserkConf = require('../../../config')
+const mongoURI = require('./config')
+const Config = require('../../../Config').mongodb
+
+/** Destructuration */
+const {
+	host,
+	port,
+	dbname,
+	user,
+	password,
+	config: { newUrlParser, useCreateIndex, useFindAndModify },
+} = Config
 
 /** 
  * db
  * Get parameters information in .env 
  */
-const db = mongoose.connect(
-	mongoURI(
-		berserkConf.mongodb.host,
-		berserkConf.mongodb.port,
-		berserkConf.mongodb.dbname,
-		berserkConf.mongodb.user,
-		berserkConf.mongodb.password
-	),
-	{
-		useNewUrlParser: berserkConf.mongodb.config.newUrlParser,
-		useCreateIndex: berserkConf.mongodb.config.useCreateIndex,
-		useFindAndModify: berserkConf.mongodb.config.useFindAndModify,
-	}
-)
+const db = mongoose.connect(mongoURI(host, port, dbname, user, password), {
+	useNewUrlParser: newUrlParser,
+	useCreateIndex: useCreateIndex,
+	useFindAndModify: useFindAndModify,
+})
 
 /**
  * ConnectDB
