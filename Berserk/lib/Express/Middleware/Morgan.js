@@ -1,6 +1,6 @@
-const app = require('../app')
+const app = require('../../app')
 const morgan = require('morgan')
-const Config = require('../../Config').morgan.conf
+const Config = require('../../../Config').morgan.conf
 
 /** Listen to app request url */
 const Morgan = () => {

@@ -1,5 +1,5 @@
-const app = require('../app')
-const Config = require('../../Config').portApp
+const app = require('../../app')
+const Config = require('../../../Config').portApp
 
 /**
  * PORT define to use

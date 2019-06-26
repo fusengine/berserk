@@ -1,5 +1,5 @@
-const app = require('../app')
-const Config = require('../../Config').view
+const app = require('../../app')
+const Config = require('../../../Config').view
 const engine = require('ejs-mate')
 const path = require('path')
 
@@ -12,13 +12,13 @@ const ViewEngine = () => {
 	try {
 		if (pathBerserk) {
 			// Define directory views
-			const pathDir = path.join(__dirname, `../../../${pathBerserk}`)
+			const pathDir = path.join(__dirname, `../../../../${pathBerserk}`)
 
 			// Define views file
 			app.set('views', pathDir)
 		} else {
 			// Define directory views
-			const pathDir = path.join(__dirname, `../../../views`)
+			const pathDir = path.join(__dirname, `../../../../views`)
 
 			// Define views file
 			app.set('views', pathDir)

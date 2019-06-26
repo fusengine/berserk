@@ -1,7 +1,7 @@
-const app = require('../app')
-const apiBerserk = require('../../../routes/api')
-const webBerserk = require('../../../routes/web')
-const Config = require('../../Config.js').routerPath
+const app = require('../../app')
+const apiBerserk = require('../../../../routes/api')
+const webBerserk = require('../../../../routes/web')
+const Config = require('../../../Config.js').routerPath
 
 /** Destruturation */
 const { api, route } = Config

@@ -1,5 +1,5 @@
-const app = require('../app')
-const Config = require('../../Config').header
+const app = require('../../app')
+const Config = require('../../../Config').header
 
 /** Destruturation */
 const { origine, headers, method, credentials } = Config
