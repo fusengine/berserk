@@ -2,7 +2,7 @@ const express = require('express')
 const app = require('../../app')
 
 /** Build middleware express */
-const BuildMiddleware = () => {
+const Middleware = () => {
 	try {
 		/** Build middleware Function */
 		app.use(express.urlencoded({ extended: true }))
@@ -12,4 +12,4 @@ const BuildMiddleware = () => {
 	}
 }
 
-module.exports = BuildMiddleware
+module.exports = Middleware

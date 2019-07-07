@@ -1,35 +1,25 @@
-const ViewEngine = require('./Middleware/ViewEngine')
-const Middleware = require('./Middleware/Middleware')
-const Static = require('./Middleware/Static')
-const Headers = require('./Middleware/Headers')
-const Morgan = require('./Middleware/Morgan')
-const Route = require('./Middleware/Route')
-const Host = require('./Middleware/Host')
-
 /** Start module express js */
-const Express = () => {
+module.exports = Express = () => {
 	console.log('Starting Express')
 
 	/** Define To use View  */
-	ViewEngine()
+	require('./Modules').ViewEngine()
 
 	/** Build Middleware Function */
-	Middleware()
+	require('./Modules').Middleware()
 
 	/** Define add a Static file */
-	Static()
+	require('./Modules').Static()
 
 	/** define to accepte Request */
-	Headers()
+	require('./Modules').Headers()
 
 	/** Morgan */
-	Morgan()
+	require('./Modules').Morgan()
 
 	/** Listen api and route */
-	Route()
+	require('./Modules').Route()
 
 	/** Define port Listen */
-	Host()
+	require('./Modules').Host()
 }
-
-module.exports = Express

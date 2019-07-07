@@ -22,12 +22,14 @@ const Host = () => {
 		// Try if port is define in file .env
 		if (PORT_APP) {
 			app.listen(PORT(PORT_APP), () => {
-				console.log(`Berserk is listening port ${PORT_APP}`)
+				console.log(
+					`You add the port: ${PORT_APP}, Berserk is listening : 'http://localhost:${PORT_APP}'`
+				)
 			})
 		} else {
 			// Default port listen
 			app.listen(PORT(5000), () => {
-				console.log(`Berserk is listening : 'http://localhost:${5000}'`)
+				console.log(`Berserk is listening on default port 5000: 'http://localhost:${5000}'`)
 			})
 		}
 	} catch (error) {

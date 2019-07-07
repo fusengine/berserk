@@ -16,14 +16,14 @@
 		"ejs": "^2.6.2",
 		"ejs-mate": "^3.0.0",
 		"express": "^4.17.1",
-		"express-validator": "^6.0.1",
+		"express-validator": "^6.1.1",
 		"jsonwebtoken": "^8.5.1",
-		"mongoose": "^5.6.1",
+		"mongoose": "^5.6.3",
 		"morgan": "^1.9.1",
 		"pug": "^2.0.4"
 	},
 	"devDependencies": {
-		"concurrently": "^4.1.0",
+		"concurrently": "^4.1.1",
 		"nodemon": "^1.19.1"
 	}
 }
