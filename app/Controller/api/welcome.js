@@ -1,7 +1,7 @@
-const router = require('express').Router()
+const web = require('express').Router()
 
-router.get('/', (req, res) => {
+web.get('/', (req, res) => {
 	res.json({ name: 'hello this is api uri' })
 })
 
-module.exports = router
+module.exports = web

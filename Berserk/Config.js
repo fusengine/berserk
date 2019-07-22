@@ -26,9 +26,9 @@ module.exports = {
 	},
 
 	/** Define route path */
-	routerPath: {
+	router: {
 		api: '/api',
-		route: '/',
+		web: '/',
 	},
 
 	/** Define Header Request */

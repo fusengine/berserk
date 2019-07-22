@@ -1,10 +1,10 @@
 const app = require('../../app')
 const apiBerserk = require('../../../../routes/api')
 const webBerserk = require('../../../../routes/web')
-const Config = require('../../../Config.js').routerPath
+const Config = require('../../../Config.js').router
 
 /** Destruturation */
-const { api, route } = Config
+const { api, web } = Config
 
 /**
  * Define initial route to run api 
@@ -13,7 +13,7 @@ const { api, route } = Config
 const Route = () => {
 	try {
 		app.use(api, apiBerserk)
-		app.use(route, webBerserk)
+		app.use(web, webBerserk)
 	} catch (error) {
 		console.error(error)
 	}
