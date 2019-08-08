@@ -9,7 +9,13 @@ const {
 	dbname,
 	user,
 	password,
-	config: { newUrlParser, useCreateIndex, useFindAndModify },
+	config: {
+		newUrlParser,
+		useCreateIndex,
+		useFindAndModify,
+		tryReconnectMongo,
+		intervalReconnectMongo,
+	},
 } = Config
 
 /** 
@@ -20,6 +26,8 @@ const db = mongoose.connect(mongoURI(host, port, dbname, user, password), {
 	useNewUrlParser: newUrlParser,
 	useCreateIndex: useCreateIndex,
 	useFindAndModify: useFindAndModify,
+	reconnectTries: tryReconnectMongo,
+	reconnectInterval: intervalReconnectMongo,
 })
 
 /**

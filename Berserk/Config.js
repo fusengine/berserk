@@ -52,6 +52,8 @@ module.exports = {
 			newUrlParser: true,
 			useCreateIndex: true,
 			useFindAndModify: false,
+			tryReconnectMongo: 5,
+			intervalReconnectMongo: 500,
 		},
 	},
 }
