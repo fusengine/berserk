@@ -6,7 +6,19 @@ const app = require('../../../app')
 const Errors = () => {
 	/** Custom page 404 */
 	app.use(function(req, res, next) {
-		res.status(404).render('errors/404', { url: req.url })
+		res.status(404)
+
+		if (req.accepts('html')) {
+			res.render('errors/404', { url: req.url })
+			return
+		}
+
+		// respond with json
+		if (req.accepts('json')) {
+			res.send({ error: 'Not found' })
+			return
+		}
+
 		return
 	})
 
