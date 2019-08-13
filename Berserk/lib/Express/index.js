@@ -20,6 +20,9 @@ module.exports = Express = () => {
 	/** Listen api and route */
 	require('./Modules').Route()
 
+	/** Build Middleware Error function Function */
+	require('./Modules').Errors()
+
 	/** Define port Listen */
 	require('./Modules').Host()
 }

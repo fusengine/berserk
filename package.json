@@ -4,9 +4,9 @@
 	"description": "Starter node from api node",
 	"main": "berserk",
 	"scripts": {
-		"start": "node berserk",
+		"prod": " NODE_ENV=production node berserk",
 		"server": "nodemon berserk",
-		"dev": "concurrently \"yarn run server\""
+		"dev": " NODE_ENV=development concurrently \"yarn run server\""
 	},
 	"author": "Bruno Azoulay <info@fusengine.ch>",
 	"license": "MIT",
