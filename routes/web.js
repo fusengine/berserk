@@ -1,7 +1,12 @@
 const web = require('express').Router()
 
-/** Use Router */
-web.use('/', require('../app/Controller/http/welcome'))
+/** Controller */
+const { home } = require('../app/Controller/http/home.controller')
+
+/**
+ * @route	GET	api/
+ */
+web.get('/', home)
 
 /** Export Module */
 module.exports = web

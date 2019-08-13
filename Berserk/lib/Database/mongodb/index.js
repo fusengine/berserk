@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 const mongoURI = require('./config')
 const Config = require('../../../Config').mongodb
+const Util = require('../../Util')
 
 /** Destructuration */
 const {
@@ -40,7 +41,7 @@ const ConnectDB = async () => {
 		console.log('Berserk connected on mongodb ')
 	} catch (error) {
 		const err = `Berserk not connected on mongodb: ${error.message}`
-		return console.log(err)
+		console.log(Util(err))
 
 		// console.error(error.message)
 		//  Sort du processus en cas d'erreur
