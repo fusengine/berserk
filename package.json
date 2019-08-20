@@ -1,29 +1,34 @@
 {
 	"name": "berserk",
-	"version": "1.1.0",
-	"description": "Starter node from api node",
-	"main": "berserk",
+	"version": "1.0.0",
+	"description": "Berserk Framework node",
+	"main": "src/index.js",
 	"scripts": {
-		"prod": " NODE_ENV=production node berserk",
-		"server": "nodemon berserk",
-		"dev": " NODE_ENV=development concurrently \"yarn run server\""
+		"berserk": "nodemon index.js",
+		"dev": "NODE_ENV=development  concurrently \"yarn run berserk\"",
+		"preinstall": "which link-module-alias && link-module-alias clean || echo",
+		"postinstall": "link-module-alias"
 	},
-	"author": "Bruno Azoulay <info@fusengine.ch>",
+	"_moduleAliases": {
+		"~root": ".",
+		"controller": "src/app/controllers",
+		"public": "src/public",
+		"config": "src/config.js",
+		"Api": "src/routes/api.js",
+		"Web": "src/routes/web.js"
+	},
+	"author": "Fusengine <info@fusengine.ch>",
 	"license": "MIT",
 	"dependencies": {
-		"bcryptjs": "^2.4.3",
-		"config": "^3.2.2",
+		"@fusengine/berserk-engine": "^1.0.25",
+		"concurrently": "^4.1.2",
 		"ejs": "^2.6.2",
 		"ejs-mate": "^3.0.0",
 		"express": "^4.17.1",
 		"express-validator": "^6.1.1",
-		"jsonwebtoken": "^8.5.1",
+		"link-module-alias": "^1.2.0",
 		"mongoose": "^5.6.9",
-		"morgan": "^1.9.1",
+		"nodemon": "^1.19.1",
 		"pug": "^2.0.4"
-	},
-	"devDependencies": {
-		"concurrently": "^4.1.1",
-		"nodemon": "^1.19.1"
 	}
 }
