@@ -1,3 +1,3 @@
 const { engine, berserkPath } = require('@fusengine/berserk-engine')
 
-engine('config', 'Api', 'Web', berserkPath('src/views'))
+engine('config', 'route-api', 'route-http', berserkPath('src/views'))
