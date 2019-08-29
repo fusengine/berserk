@@ -1,7 +1,7 @@
 {
 	"name": "berserk",
 	"version": "1.0.0",
-	"description": "Berserk Framework node",
+	"description": "Berserk Framework node from fusengine",
 	"main": "src/index.js",
 	"scripts": {
 		"berserk": "nodemon index.js",
