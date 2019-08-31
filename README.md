@@ -1,10 +1,11 @@
-# Berserk
+![alt Berserk](https://cdn.fusengine.ch/logo/berserk_framework.png "Berserk Engine")
 
-## Start Berserk 
-`yarn start`
+### Berserk commande to run mode dev
+```
+yarn dev      
+```
 
-## Start Berserk with nodemon
-`yarn server`
-
-## Start Berserk with nodemon and concurrently
-`yarn dev`
+### Berserk commande to run mode prod
+```  
+yarn berserk
+```
