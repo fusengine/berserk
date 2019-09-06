@@ -2,6 +2,7 @@ const { berserkPath } = require('@fusengine/berserk-engine')
 
 module.exports = {
 	/**
+	 * port
 	 * Define port to listen app 
 	 * @param {String|number} port define your custom port
 	 */
@@ -16,11 +17,13 @@ module.exports = {
 	},
 
 	/**
+	 * urlEncoded
 	 * @param {Boolean} urlencoded by default false
 	 */
 	urlEncoded: true,
 
 	/**
+	 * morganOption
 	 * @param {String} morganOption
 	 * option: dev, tiny, combined
 	 * other option go to https://github.com/expressjs/morgan#readme
@@ -28,7 +31,7 @@ module.exports = {
 	morganOption: '',
 
 	/**
-	 * View
+	 * viewExtension
 	 * @param {String} viewExtension extension file ejs or pug
 	 */
 	viewExtension: 'ejs',
