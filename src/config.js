@@ -46,7 +46,22 @@ module.exports = {
 		name: '/assets',
 	},
 
-	/** Mongo db */
+	/**
+	 * mongoConfig
+	 *
+	 * @param {String} server server mongodb
+	 * @param {String} user server user mongo
+	 * @param {String} password password user mongodb
+	 * @param {String} host server hostname and domain to mongodb
+	 * @param {String} port server port mongodb
+	 * @param {String} dbname server database name mongodb
+	 * @param {Boolean} newUrlParser options mongodb
+	 * @param {Boolean} useUnifiedTopology options mongodb
+	 * @param {Boolean} useCreateIndex options mongodb
+	 * @param {Boolean} useFindAndModify options mongodb
+	 * @param {Integer} tryReconnectMongo options mongodb
+	 * @param {Integer} intervalReconnectMongo options mongodb
+	 */
 	mongoConfig: {
 		server: 'mongodb',
 		user: '',
