@@ -33,15 +33,15 @@
 	"author": "Fusengine <info@fusengine.ch>",
 	"license": "MIT",
 	"dependencies": {
-		"@fusengine/berserk-engine": "^1.2.6",
+		"@fusengine/berserk-engine": "^1.2.7",
 		"concurrently": "^4.1.2",
 		"ejs": "^2.7.1",
 		"ejs-mate": "^3.0.0",
 		"express": "^4.17.1",
 		"express-validator": "^6.2.0",
 		"link-module-alias": "^1.2.0",
-		"mongoose": "^5.7.1",
-		"nodemon": "^1.19.2",
+		"mongoose": "^5.7.3",
+		"nodemon": "^1.19.3",
 		"pug": "^2.0.4"
 	}
 }
