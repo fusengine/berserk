@@ -47,6 +47,12 @@ module.exports = {
 	},
 
 	/**
+	 * cookieParserSecretKey
+	 * @param {String} cookieParserSecretKey add secret key to signe berserk with cookie-parser
+	 */
+	cookieParserSecretKey: 'berserk-app-key',
+
+	/**
 	 * mongoConfig
 	 *
 	 * @param {String} server server mongodb
