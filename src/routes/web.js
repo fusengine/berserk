@@ -1,7 +1,7 @@
 const web = require('express').Router()
 
 /** Controller */
-const { home } = require('controller/web/home.controller')
+const { home } = require('Berserk/controllers/web/home.controller')
 
 /**
  * @route	GET	api/

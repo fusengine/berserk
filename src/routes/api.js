@@ -1,6 +1,6 @@
 const api = require('express').Router()
 
-const { home } = require('controller/api/home.controller')
+const { home } = require('Berserk/controllers/api/home.controller')
 
 api.get('/', home)
 

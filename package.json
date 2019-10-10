@@ -25,16 +25,15 @@
 	},
 	"_moduleAliases": {
 		"~root": ".",
-		"Controller": "src/app/controllers",
-		"Model": "src/app/models",
-		"Public": "src/public",
+		"Berserk": "src/app",
 		"Config": "src/config.js",
+		"Public": "src/public",
 		"Route": "src/routes"
 	},
 	"author": "Fusengine <info@fusengine.ch>",
 	"license": "MIT",
 	"dependencies": {
-		"@fusengine/berserk-engine": "^1.3.1",
+		"@fusengine/berserk-engine": "^1.3.2",
 		"concurrently": "^5.0.0",
 		"ejs": "^2.7.1",
 		"ejs-mate": "^3.0.0",
