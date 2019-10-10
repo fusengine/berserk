@@ -29,7 +29,7 @@
 		"Model": "src/app/models",
 		"Public": "src/public",
 		"Config": "src/config.js",
-		"Route": "src/routes",
+		"Route": "src/routes"
 	},
 	"author": "Fusengine <info@fusengine.ch>",
 	"license": "MIT",
