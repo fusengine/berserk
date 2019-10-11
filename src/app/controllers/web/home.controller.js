@@ -6,9 +6,13 @@
 exports.home = router = (req, res) => {
 	const title = 'Berserk'
 
-	res.cookie('key', 'berserk-app', { signed: true })
+	if (req.session.views) {
+		req.session.views += 1
+	} else {
+		req.session.views = 1
+	}
 
-	console.log(req.signedCookies)
+	console.log(req.session)
 	// passing data to view
 	res.render('index', { title })
 }
