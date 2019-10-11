@@ -84,14 +84,17 @@ module.exports = {
 		intervalReconnectMongo: 500,
 	},
 
-	/** Session Option */
+	/**
+	 * sessionOption
+	 */
 	sessionOption: {
 		secret: 'berserk-Key',
 		resave: false,
+		name: '',
 		saveUninitialized: true,
 		cookie: {
 			httpOnly: true,
-			maxAge: 600,
+			maxAge: 6000,
 		},
 	},
 }
