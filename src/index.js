@@ -1,3 +1,9 @@
-const { engine, berserkPath } = require('@fusengine/berserk-engine')
+const Berserk = require('@fusengine/berserk-engine')
 
-engine('config', 'Route/api', 'Route/web', berserkPath('src/views'))
+Berserk(
+	'Config/app.config',
+	'Route/api',
+	'Route/web',
+	'src/views',
+	'src/config/auth/Passport.config.js'
+)

@@ -1,5 +1,3 @@
-const { berserkPath } = require('@fusengine/berserk-engine')
-
 module.exports = {
 	/**
 	 * port
@@ -42,7 +40,7 @@ module.exports = {
 	 * @param {String} name create name to use in your ejs and pug file
 	 */
 	assets: {
-		dir: berserkPath('src/public/assets'),
+		dir: 'src/public/assets',
 		name: '/assets',
 	},
 
