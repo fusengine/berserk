@@ -4,7 +4,7 @@ module.exports = {
 	 * Define port to listen app 
 	 * @param {String|number} port define your custom port
 	 */
-	port: '',
+	portNumber: '5001',
 
 	/** Define Header Request */
 	header: {
@@ -18,7 +18,7 @@ module.exports = {
 	 * urlEncoded
 	 * @param {Boolean} urlencoded by default false
 	 */
-	urlEncoded: true,
+	encoded: true,
 
 	/**
 	 * morganOption
@@ -81,18 +81,17 @@ module.exports = {
 		tryReconnectMongo: 5,
 		intervalReconnectMongo: 500,
 	},
-
 	/**
 	 * sessionOption
 	 */
 	sessionOption: {
-		secret: 'berserk-Key',
+		secret: 'berserk-Key-app',
 		resave: false,
 		name: '',
 		saveUninitialized: true,
 		cookie: {
 			httpOnly: true,
-			maxAge: 6000,
+			maxAge: 60000,
 		},
 	},
 }

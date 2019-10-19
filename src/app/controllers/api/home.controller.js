@@ -4,5 +4,5 @@
  * @access	PUBLIC
  */
 exports.home = (req, res) => {
-	res.json({ name: 'Api Berserk 😊' })
+	res.json({ name: 'Api Berserk 😊!' })
 }
