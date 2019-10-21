@@ -7,5 +7,5 @@ engine(require('Config/app.config'), require('Route/api'), require('Route/web'),
 	require('Config/express/passport.config'),
 	require('Config/express/static.config'),
 	require('Config/express/view.config'),
-	require('config/upload.config'),
+	// require('config/upload.config'),
 ])

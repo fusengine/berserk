@@ -36,7 +36,7 @@
 	"author": "Fusengine <info@fusengine.ch>",
 	"license": "MIT",
 	"dependencies": {
-		"@fusengine/berserk-engine": "^1.5.7",
+		"@fusengine/berserk-engine": "^1.6.0",
 		"bcrypt": "^3.0.6",
 		"concurrently": "^5.0.0",
 		"connect-mongo": "^3.0.0",
