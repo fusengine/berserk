@@ -6,11 +6,11 @@ const filters = (req, file, cb) => {
 }
 
 const upload = multer({
-	dest: './src/storages',
+	destination: './src/storages',
 
 	// destination disk storage
 	storage: multer.diskStorage({
-		dest: (req, file, cb) => {
+		destination: (req, file, cb) => {
 			cb(null, '/storages')
 		},
 		// original name to file upload

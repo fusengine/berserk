@@ -1,12 +1,14 @@
 const web = require('express').Router()
 
-/** Controller */
-const { home } = require('Berserk/controllers/web/home.controller')
-
 /**
  * @route	GET	api/
  */
-web.get('/', home)
+web.get('/', (req, res) => {
+	res.render('home', { user: req.user, title: 'home' })
+})
+
+web.use('/users', require('./http/user.route'))
+web.use('/auth', require('./http/auth.route'))
 
 /** Export Module */
 module.exports = web

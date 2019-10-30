@@ -1,0 +1,28 @@
+<% layout('layout') -%>
+
+    <h1>Login </h1>
+
+    <div class="d-flex flex-row">
+
+        <form method="post" action="/auth/signin">
+
+            <div class="form-group">
+                <label>email : </label>
+                <input class="form-control" type="email" name="email" />
+            </div>
+
+            <div class="form-group">
+                <label>Password : </label>
+                <input class="form-control" type="password" name="password" />
+            </div>
+
+            <% if (error) { %>
+                <p style="color:red;"><%= error %></p>
+            <% } %>
+
+            <div>
+                <button class="btn btn-primary">Connexion</button>
+            </div>
+        </form>
+    </div>
+      

@@ -18,7 +18,7 @@ module.exports = {
 	 * urlEncoded
 	 * @param {Boolean} urlencoded by default false
 	 */
-	encoded: true,
+	encoded: false,
 
 	/**
 	 * morganOption
@@ -70,9 +70,9 @@ module.exports = {
 		server: 'mongodb',
 		user: '',
 		password: '',
-		host: '',
-		port: '',
-		dbname: '',
+		host: 'localhost',
+		port: '207',
+		dbname: 'berserk-db',
 		options: 'retryWrites=true',
 		newUrlParser: true,
 		useUnifiedTopology: true,
@@ -80,6 +80,13 @@ module.exports = {
 		useFindAndModify: false,
 		tryReconnectMongo: 5,
 		intervalReconnectMongo: 500,
+	},
+
+	/**
+	 * Json web token Secret
+	 */
+	JWT: {
+		secret: 'a2463421-b798-470a-b4ee-fd23783ec69d',
 	},
 	/**
 	 * sessionOption

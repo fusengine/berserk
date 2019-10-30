@@ -1,0 +1,38 @@
+<% layout('layout') -%>
+
+<h1>
+  Subscription
+</h1>
+ 
+  <div class="d-flex flex-row">
+    <form method="post" action="/users/signup" >
+
+      <div class="form-group">
+        <label>Username : </label>
+        <input class="form-control" type="text" name="username" />
+      </div>
+
+      <div class="form-group">
+        <label>Password : </label>
+        <input class="form-control" type="password" name="password" />
+      </div>
+      
+      <% if (error) { %>
+        <p style="color:red;"><%= error[0] %></p>
+      <% } %>
+
+      <div class="form-group">
+        <label>email : </label>
+        <input class="form-control" type="email" name="email" />
+      </div>
+
+      <% if (error) { %>
+        <p style="color:red;"><%= error[1] %></p>
+      <% } %>
+      <div>
+        <button class="btn btn-primary">Inscription</button>
+      </div>
+
+    </form>
+  </div>
+   
