@@ -16,7 +16,16 @@ const { findUserPerId } = require('Model/Queries/user.queries')
  * @param {String} user define user id to sign token
  */
 exports.createJwtToken = user => {
-	const jwtToken = jwt.sign({ sub: user._id }, SecretKeyJwt, { expiresIn: '1h' })
+	const jwtToken = jwt.sign(
+		{
+			id: user._id,
+			user: {
+				name: user.username,
+			},
+			expireIn: '1h',
+		},
+		SecretKeyJwt
+	)
 	return jwtToken
 }
 
@@ -36,7 +45,8 @@ const extractUserFromToken = async (req, res, next) => {
 	if (token) {
 		try {
 			const decodedToken = jwt.verify(token, SecretKeyJwt)
-			const user = await findUserPerId(decodedToken.sub)
+			console.log(decodedToken)
+			const user = await findUserPerId(decodedToken.id)
 			if (user) {
 				req.user = user
 				next()
@@ -45,6 +55,7 @@ const extractUserFromToken = async (req, res, next) => {
 				res.redirect('/')
 			}
 		} catch (e) {
+			console.log(e)
 			res.clearCookie('jwt')
 			res.redirect('/')
 		}
