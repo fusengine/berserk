@@ -27,7 +27,6 @@ web.post('/signup', userCreate)
  */
 web.get('/account', guardCheckIsAuthenticated, (req, res) => {
 	const user = req.user
-	console.log(req.isAuthenticated())
 	res.render('users/index', { user: req.user, title: 'home', user })
 })
 

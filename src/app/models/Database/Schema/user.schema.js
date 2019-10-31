@@ -12,13 +12,21 @@ const UserSchema = schema({
 	username: { type: String },
 })
 
-/** hashPassword */
-UserSchema.statics.hashPWD = password => {
+/** 
+ * hashPassword 
+ * @param {String} password hash password
+ */
+
+UserSchema.statics.hashPassword = password => {
 	return HashPassword(password, 10)
 }
-console.log(this.local)
-/** comparePassword with connexion */
-UserSchema.methods.comparePWD = (password, userPassword) => {
+
+/** 
+ * comparePWD with connexion 
+ * @param {String} password user enter password
+ * @param {String} userPassword compare password
+ */
+UserSchema.methods.comparePassword = (password, userPassword) => {
 	return ComparePassword(password, userPassword)
 }
 

@@ -1,7 +1,14 @@
 <% layout('layout') -%>
 
-<h1>
-  Welcome <%= user.username  %>
-  
-</h1>
-<p><%= user.local.email  %></p>
+
+<h1> Account page</h1>
+
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Account <%= user.username  %></h5>
+    <p class="card-text">
+      <strong>email:</strong> <%= user.local.email  %>
+    </p>
+    <a href="/" class="btn btn-primary">Home</a>
+  </div>
+</div>

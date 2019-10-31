@@ -26,7 +26,7 @@ exports.signin = async (req, res, next) => {
 		const { email, password } = req.body
 		const user = await findUserPerEmail(email)
 		if (user) {
-			const match = await user.comparePWD(password, user.local.password)
+			const match = await user.comparePassword(password, user.local.password)
 			if (match) {
 				req.login(user)
 				res.redirect('/users/account')

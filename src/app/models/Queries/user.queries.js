@@ -7,7 +7,7 @@ const { User } = require('../Database/index')
  */
 exports.createUser = async body => {
 	try {
-		const hashedPassword = await User.hashPWD(body.password)
+		const hashedPassword = await User.hashPassword(body.password)
 		console.log(hashedPassword)
 		const user = new User({
 			username: body.username,
