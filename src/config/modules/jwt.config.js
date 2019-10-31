@@ -60,12 +60,12 @@ const checkExpireToken = (token, res) => {
 const extractUserFromToken = async (req, res, next) => {
 	// request token jwt
 	const token = req.cookies.jwt
-	console.log(token)
 
 	// if have a token
 	if (token) {
 		try {
 			let decodedToken = jwt.verify(token, SecretKeyJwt, { ignoreExpiration: true })
+			// auto refresh token
 			decodedToken = checkExpireToken(decodedToken, res)
 			const user = await findUserPerId(decodedToken.id)
 			if (user) {
