@@ -1,7 +1,7 @@
 const web = require('express').Router()
 
 /** Config Guard */
-const { guardCheckIsAuthenticated } = require('Config/guard.config')
+const { guardCheckIsAuthenticated } = require('Config/modules/guard.config')
 
 /** Controller */
 const { userForm, userCreate } = require('Controller/web/user.controller')
@@ -26,7 +26,9 @@ web.post('/signup', userCreate)
  * PRIVATE
  */
 web.get('/account', guardCheckIsAuthenticated, (req, res) => {
-	res.render('users/index', { user: req.user, title: 'home' })
+	const user = req.user
+	console.log(req.isAuthenticated())
+	res.render('users/index', { user: req.user, title: 'home', user })
 })
 
 module.exports = web

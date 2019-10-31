@@ -1,4 +1,4 @@
-const { User } = require('../index')
+const { User } = require('../Database/index')
 
 /**
  * createUser
@@ -7,12 +7,12 @@ const { User } = require('../index')
  */
 exports.createUser = async body => {
 	try {
-		const { username, password, email } = body
-		const hashedPassword = await User.hashPassword(password)
+		const hashedPassword = await User.hashPWD(body.password)
+		console.log(hashedPassword)
 		const user = new User({
-			username: username,
+			username: body.username,
 			local: {
-				email: email,
+				email: body.email,
 				password: hashedPassword,
 			},
 		})

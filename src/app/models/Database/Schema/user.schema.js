@@ -1,8 +1,8 @@
-const bcrypt = require('bcrypt')
 const schema = require('mongoose').Schema
+const bcrypt = require('bcrypt')
 
 /** Utils */
-const { HashPassword, ComparePassword } = require('Config/bin/utils.config')
+const { HashPassword, ComparePassword } = require('Config/utils.config')
 
 const UserSchema = schema({
 	local: {
@@ -13,13 +13,13 @@ const UserSchema = schema({
 })
 
 /** hashPassword */
-UserSchema.statics.hashPassword = async password => {
-	await HashPassword(password, 10)
+UserSchema.statics.hashPWD = password => {
+	return HashPassword(password, 10)
 }
-
+console.log(this.local)
 /** comparePassword with connexion */
-UserSchema.methods.comparePassword = password => {
-	ComparePassword(password)
+UserSchema.methods.comparePWD = (password, userPassword) => {
+	return ComparePassword(password, userPassword)
 }
 
 module.exports = UserSchema

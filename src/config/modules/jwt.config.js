@@ -1,10 +1,10 @@
 const jwt = require('jsonwebtoken')
 const { app, berserkUtils } = require('@fusengine/berserk-engine')
 
-berserkUtils.successMessage('Jwt: Loaded')
+berserkUtils.successMessage('JWT: JWT in app.config.js')
 
 /** Secret jwt */
-const SecretKeyJwt = require('./app.config').JWT.secret
+const SecretKeyJwt = require('../app.config').JWT.secret
 
 /** Query */
 const { findUserPerId } = require('Model/Queries/user.queries')
@@ -16,8 +16,7 @@ const { findUserPerId } = require('Model/Queries/user.queries')
  * @param {String} user define user id to sign token
  */
 exports.createJwtToken = user => {
-	const jwtToken = jwt.sign({ sub: user._id.toString() }, SecretKeyJwt)
-	console.log('create token:', jwtToken)
+	const jwtToken = jwt.sign({ sub: user._id }, SecretKeyJwt, { expiresIn: '1h' })
 	return jwtToken
 }
 
@@ -66,7 +65,7 @@ const addJwtFeatures = (req, res, next) => {
 	req.isAuthenticated = () => !!req.user
 	req.logout = () => res.clearCookie('jwt')
 	req.login = user => {
-		const token = createJwtToken(user)
+		const token = this.createJwtToken(user)
 		res.cookie('jwt', token)
 	}
 	next()

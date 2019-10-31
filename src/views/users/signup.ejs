@@ -7,30 +7,34 @@
   <div class="d-flex flex-row">
     <form method="post" action="/users/signup" >
 
+    <% if (error) { %>
+      <p style="color:red;"><%= error %></p>
+    <% } %>
+
       <div class="form-group">
-        <label>Username : </label>
-        <input class="form-control" type="text" name="username" />
+        <input class="form-control" type="text" name="username" placeholder="Username."/>
       </div>
 
       <div class="form-group">
-        <label>Password : </label>
-        <input class="form-control" type="password" name="password" />
+        <input class="form-control" type="email" name="email" placeholder="Email."/>
       </div>
-      
+
       <% if (error) { %>
         <p style="color:red;"><%= error[0] %></p>
       <% } %>
 
       <div class="form-group">
-        <label>email : </label>
-        <input class="form-control" type="email" name="email" />
+        <input type="password" class="form-control" placeholder="Password." name="password">
       </div>
-
+      
       <% if (error) { %>
         <p style="color:red;"><%= error[1] %></p>
       <% } %>
-      <div>
+
+      
+      <div class="text-center">
         <button class="btn btn-primary">Inscription</button>
+        <a href="/" class="btn btn-info">Back</a>
       </div>
 
     </form>

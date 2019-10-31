@@ -10,7 +10,6 @@ const bcrypt = require('bcrypt')
 exports.HashPassword = async (pwd, saltNumber) => {
 	try {
 		const salt = await bcrypt.genSalt(saltNumber)
-
 		return bcrypt.hash(pwd, salt)
 	} catch (error) {
 		throw error
@@ -21,7 +20,8 @@ exports.HashPassword = async (pwd, saltNumber) => {
  * ComparePassword
  * This is compare password
  * @param {String} password password param to compare
+ * @param {Function} comparePass Compare password user
  */
-exports.ComparePassword = async password => {
-	return await bcrypt.compare(password, this.local.password)
+exports.ComparePassword = (password, comparePass) => {
+	return bcrypt.compare(password, comparePass)
 }
