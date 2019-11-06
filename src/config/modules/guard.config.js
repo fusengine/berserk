@@ -1,12 +1,12 @@
 /**
- * guardCheckIsAuthenticated
+ * guardian
  * this check if user authenticated
  * 
  * @param {*} req request
  * @param {*} res response
  * @param {*} next next execution
  */
-exports.guardCheckIsAuthenticated = (req, res, next) => {
+exports.guardian = (req, res, next) => {
 	if (req.isAuthenticated()) {
 		next()
 	} else {

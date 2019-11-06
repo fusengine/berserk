@@ -1,8 +1,7 @@
 /** Queries */
-const { createUser, findUserPerEmail } = require('Model/Queries/user.queries')
+const { registerUser, findUserPerEmail } = require('Model/Queries/user.queries')
 
 /**
- * userForm
  * @route   GET /users/signup
  * @desc    Go to user subscription page
  * PUBLIC
@@ -11,12 +10,11 @@ exports.userForm = (req, res, next) => {
 	if (req.isAuthenticated()) {
 		res.redirect('/users/account')
 	} else {
-		res.render('users/signup', { title: 'subscribe you', error: null })
+		res.render('users/signup', { title: 'Register user', error: null })
 	}
 }
 
 /**
- * userForm
  * @route   POST /users/signup
  * @desc    Send form to register user
  * PUBLIC
@@ -24,19 +22,33 @@ exports.userForm = (req, res, next) => {
 exports.userCreate = async (req, res, next) => {
 	try {
 		const body = req.body
-		const userExist = await findUserPerEmail(body.email)
+		let user = await findUserPerEmail(body.email)
 
-		if (userExist) {
-			res.render('users/signup', { title: 'subscribe you', error: ' User exist!' })
+		if (user) {
+			res.status(402)
+			res.render('users/signup', {
+				title: 'Register user',
+				error: {
+					user: ' User exist!',
+					password: 'Password required',
+					email: 'Email required',
+				},
+			})
 		} else {
-			const user = await createUser(body)
-			req.login(user)
-			res.redirect('/users/account')
+			if (body.password.length === 0 || body.password.email) {
+				res.status(402)
+				res.render('users/signup', {
+					title: 'Register user',
+					error: { password: 'Password required', email: 'Email required' },
+				})
+			} else {
+				user = await registerUser(body)
+				req.login(user)
+				res.redirect('/users/account')
+			}
 		}
-	} catch (e) {
-		const err = Object.keys(e.errors).map(key => e.errors[key].message)
-		console.log(e)
-
-		res.render('users/signup', { error: err, title: 'subscribe you', errorMessage: null })
+	} catch (error) {
+		console.log(error.user)
+		res.render('users/signup', { error, title: 'Register user' })
 	}
 }

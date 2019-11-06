@@ -1,22 +1,26 @@
 <% layout('layout') -%>
 
+<% if (user) { %>
+<h2> Hello <%= user.username %></h2>
+<% } %>
+
+<h1>
+    <img src="/assets/img/logo.png"
+        alt="berserk"
+        width="650" />
+</h1>
+
+
+<div class="d-flex flex-row">
     <% if (user) { %>
-        <h2> Hello <%= user.username %></h2>
+    <a href="/auth/signout"
+        class="mx-3">logout</a>
+    <a href="/users/account"
+        class="mx-3">user</a>
+    <% } else { %>
+    <a href="/users/signup"
+        class="mx-3"> subscription</a>
+    <a href="/auth/signin"
+        class="mx-3"> Connexion</a>
     <% } %>
-
-    <h1>
-        <img src="/assets/img/logo.png" alt="berserk"width="650" />
-    </h1>
-    
-    
-    <div class="d-flex flex-row">
-        <% if (user) { %>
-                <a href="/auth/signout" class="mx-3">logout</a>
-                <a href="/users/account" class="mx-3">user</a>
-            <% } else { %>
-                <a href="/users/signup" class="mx-3"> subscription</a>
-                <a href="/auth/signin" class="mx-3"> Connexion</a>
-            <% } %>
-    </div>
-
-
+</div>

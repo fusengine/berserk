@@ -1,42 +1,55 @@
 <% layout('layout') -%>
 
 <h1>
-  Subscription
+  Register
 </h1>
- 
-  <div class="d-flex flex-row">
-    <form method="post" action="/users/signup" >
 
-    <% if (error) { %>
-      <p style="color:red;"><%= error %></p>
+<div class="d-flex flex-row">
+  <form method="post"
+    action="/users/signup">
+
+    <% if ( error && error.user ) { %>
+      <h4 class="text-center" style="color:red;"><%= error.user %></h4>
+      <a href="/auth/signin" class="btn btn-block btn-primary mb-4 text-center">Login</a>
     <% } %>
 
-      <div class="form-group">
-        <input class="form-control" type="text" name="username" placeholder="Username."/>
-      </div>
+    <div class="form-group">
+      <input class="form-control"
+        type="text"
+        name="username"
+        placeholder="Username." />
+    </div>
 
-      <div class="form-group">
-        <input class="form-control" type="email" name="email" placeholder="Email."/>
-      </div>
-
+    <div class="form-group">
+      <input class="form-control <%= error  ? 'is-invalid' : '' %>"
+        type="email"
+        name="email"
+        placeholder="Email." />
       <% if (error) { %>
-        <p style="color:red;"><%= error[0] %></p>
+        <div class="invalid-feedback">
+          <%= error.email %>
+        </div>
       <% } %>
+    </div>
 
-      <div class="form-group">
-        <input type="password" class="form-control" placeholder="Password." name="password">
-      </div>
-      
+
+
+    <div class="form-group">
+      <input type="password"
+        class="form-control <%= error  ? 'is-invalid' : '' %>"
+        placeholder="Password."
+        name="password">
       <% if (error) { %>
-        <p style="color:red;"><%= error[1] %></p>
+        <div class="invalid-feedback">
+          <%= error.password %>
+        </div>
       <% } %>
+    </div>
 
-      
-      <div class="text-center">
-        <button class="btn btn-primary">Inscription</button>
-        <a href="/" class="btn btn-info">Back</a>
-      </div>
+    <div class="text-center">
+      <button class="btn btn-primary">Inscription</button>
+      <a href="/" class="btn btn-info">Back</a>
+    </div>
 
-    </form>
-  </div>
-   
+  </form>
+</div>

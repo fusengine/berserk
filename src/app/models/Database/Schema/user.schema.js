@@ -1,13 +1,14 @@
 const schema = require('mongoose').Schema
-const bcrypt = require('bcrypt')
-
-/** Utils */
-const { HashPassword, ComparePassword } = require('Config/utils.config')
+const { berserkUtils } = require('@fusengine/berserk-engine')
 
 const UserSchema = schema({
 	local: {
-		email: { type: String, required: true, unique: true },
-		password: { type: String, required: true },
+		email: {
+			type: String,
+			required: [true, 'Email required'],
+			unique: [true, 'Email must be unique'],
+		},
+		password: { type: String, required: [true, 'Password required'] },
 	},
 	username: { type: String },
 })
@@ -16,9 +17,8 @@ const UserSchema = schema({
  * hashPassword 
  * @param {String} password hash password
  */
-
-UserSchema.statics.hashPassword = password => {
-	return HashPassword(password, 10)
+UserSchema.statics.HashPassword = password => {
+	return berserkUtils.hashPassword(password, 10)
 }
 
 /** 
@@ -26,8 +26,8 @@ UserSchema.statics.hashPassword = password => {
  * @param {String} password user enter password
  * @param {String} userPassword compare password
  */
-UserSchema.methods.comparePassword = (password, userPassword) => {
-	return ComparePassword(password, userPassword)
+UserSchema.methods.ComparePassword = (password, fieldUser) => {
+	return berserkUtils.comparePassword(password, fieldUser)
 }
 
 module.exports = UserSchema

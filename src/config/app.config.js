@@ -4,7 +4,7 @@ module.exports = {
 	 * Define port to listen app 
 	 * @param {String|number} port define your custom port
 	 */
-	portNumber: '',
+	port: '',
 
 	/** Define Header Request */
 	header: {
@@ -18,7 +18,7 @@ module.exports = {
 	 * urlEncoded
 	 * @param {Boolean} urlencoded by default false
 	 */
-	encoded: false,
+	encoded: true,
 
 	/**
 	 * morganOption
@@ -26,7 +26,7 @@ module.exports = {
 	 * option: dev, tiny, combined
 	 * other option go to https://github.com/expressjs/morgan#readme
 	 */
-	morganOption: '',
+	morgan: '',
 
 	/**
 	 * viewExtension
@@ -40,8 +40,8 @@ module.exports = {
 	 * @param {String} name create name to use in your ejs and pug file
 	 */
 	assets: {
-		dir: 'src/public/assets',
-		name: '/assets',
+		directory: 'src/public/assets',
+		pathName: '/assets',
 	},
 
 	/**
@@ -66,7 +66,7 @@ module.exports = {
 	 * @param {Integer} tryReconnectMongo options mongodb
 	 * @param {Integer} intervalReconnectMongo options mongodb
 	 */
-	mongoConfig: {
+	mongodb: {
 		server: 'mongodb',
 		user: '',
 		password: '',

@@ -1,5 +1,4 @@
 const { findUserPerEmail } = require('Model/Queries/user.queries')
-const bcrypt = require('bcrypt')
 
 /**
  * signForm
@@ -26,7 +25,8 @@ exports.signin = async (req, res, next) => {
 		const { email, password } = req.body
 		const user = await findUserPerEmail(email)
 		if (user) {
-			const match = await user.comparePassword(password, user.local.password)
+			const match = await user.ComparePassword(password, user.local.password)
+			console.log(match)
 			if (match) {
 				req.login(user)
 				res.redirect('/users/account')

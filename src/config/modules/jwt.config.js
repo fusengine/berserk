@@ -88,7 +88,7 @@ const extractUserFromToken = async (req, res, next) => {
 /**
  * addJwtFeatures
  * 
- * This add method helpers to request express
+ * This add method helpers to access express
  * @param {*} req 
  * @param {*} res 
  * @param {*} next 

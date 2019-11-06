@@ -1,30 +1,27 @@
 const { User } = require('../Database/index')
 
 /**
- * createUser
- * this create user
+ * Register user
  * @param {String} body
  */
-exports.createUser = async body => {
+exports.registerUser = async body => {
 	try {
-		const hashedPassword = await User.hashPassword(body.password)
-		console.log(hashedPassword)
+		const { username, email, password } = body
+
 		const user = new User({
-			username: body.username,
-			local: {
-				email: body.email,
-				password: hashedPassword,
-			},
+			username,
+			local: { email, password },
 		})
-		console.log(user)
-		return user.save()
-	} catch (e) {
-		throw e
+
+		user.local.password = await User.HashPassword(password)
+
+		return await user.save()
+	} catch (error) {
+		throw error
 	}
 }
 
 /**
- * findUserPerEmail
  * Search user per email
  * @param {String} email
  */
