@@ -8,6 +8,8 @@ const UserSchema = schema({
 			required: [true, 'Email required'],
 			unique: [true, 'Email must be unique'],
 		},
+		passwordToken: { type: String },
+		passwordTokenExpiration: { type: Date },
 		password: { type: String, required: [true, 'Password required'] },
 	},
 	username: { type: String },

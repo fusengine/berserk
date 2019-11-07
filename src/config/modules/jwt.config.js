@@ -96,9 +96,15 @@ const extractUserFromToken = async (req, res, next) => {
 const addJwtFeatures = (req, res, next) => {
 	req.isAuthenticated = () => !!req.user
 	req.logout = () => res.clearCookie('jwt')
-	req.login = user => {
-		const token = this.createJwtToken({ user })
-		res.cookie('jwt', token)
+	req.login = (user, callback = null) => {
+		if (callback) {
+			const token = this.createJwtToken({ user })
+			callback
+			res.cookie('jwt', token)
+		} else {
+			const token = this.createJwtToken({ user })
+			res.cookie('jwt', token)
+		}
 	}
 	next()
 }

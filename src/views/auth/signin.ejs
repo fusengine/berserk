@@ -1,34 +1,50 @@
 <% layout('layout') -%>
 
-<h1>Login </h1>
+<script src="/assets/js/auth/forget.js"></script>
+
+<h1>
+    <i class="fas fa-users"></i> Login 
+</h1>
 
 <% if (error) { %>
-    <h4 style="color:red;"><%= error %></h4>
+    <h4 style="color:red;">
+       <i class="fas fa-exclamation-triangle"></i>  <%= error %>
+    </h4>
 <% } %>
 
 <div class="d-flex flex-row">
-    <form method="post"
-        action="/auth/signin">
+    <form method="post" action="/auth/signin">
+        <div class="card">
+            <div class="card-body">
 
-        <div class="form-group">
-            <input class="form-control <%= error  ? 'is-invalid' : '' %>"
-                type="email"
-                name="email"
-                placeholder="email" />
-        </div>
+                <div class="form-group">
+                    <input class="form-control <%= error  ? 'is-invalid' : '' %>"
+                        type="email"
+                        name="email"
+                        placeholder="Email" />
+                </div>
 
-        <div class="form-group">
-            <input class="form-control <%= error  ? 'is-invalid' : '' %>"
-                type="password"
-                name="password"
-                placeholder="password" />
-        </div>
+                <div class="form-group">
+                    <input class="form-control <%= error  ? 'is-invalid' : '' %>"
+                        type="password"
+                        name="password"
+                        placeholder="Password" />
+                </div>
 
 
-        <div class="text-center">
-            <button class="btn btn-primary">Login</button>
-            <a href="/"
-                class="btn btn-info">Back</a>
+                <div>
+                    <button class="btn btn-primary float-right">
+                        <i class="fas fa-sign-in-alt"></i> Login
+                    </button>
+                    <div id="forget" class="text-int float-left mr-3">
+                        <i class="fas fa-sign-in-alt"></i>
+                        Forget password?
+                    </div> 
+                </div>
+                <a href="/" class="btn btn-block mt-2 btn-dark float-left">
+                    <i class="fas fa-arrow-left"></i> Home
+                </a>
+            </div>
         </div>
     </form>
 </div>

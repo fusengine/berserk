@@ -88,6 +88,7 @@ module.exports = {
 	JWT: {
 		secret: 'a2463421-b798-470a-b4ee-fd23783ec69d',
 	},
+
 	/**
 	 * sessionOption
 	 */
@@ -99,6 +100,26 @@ module.exports = {
 		cookie: {
 			httpOnly: true,
 			maxAge: 60000,
+		},
+	},
+
+	/**
+	 * Configuration to send email
+	 * @param {String} from add email sender
+	 * @param {String} host add email hosting
+	 * @param {String|Number} port add port host to send email
+	 * @param {Boolean} secure define if host is secure true and false
+	 * @param {String} user add email user to authenticate on your hosting
+	 * @param {String} password add password user email to authenticate on your host
+	 */
+	mailer: {
+		from: 'Berserk Mail <noreply@fuseboat.co>',
+		host: 'mail.fuseboat.co',
+		port: 587,
+		secure: false,
+		auth: {
+			user: 'noreply@fuseboat.co',
+			password: 'DeZeD7879*',
 		},
 	},
 }

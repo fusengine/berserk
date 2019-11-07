@@ -1,55 +1,67 @@
 <% layout('layout') -%>
 
 <h1>
-  Register
+  <i class="fas fa-clipboard-check"></i> Register
 </h1>
 
 <div class="d-flex flex-row">
-  <form method="post"
-    action="/users/signup">
+  <form method="post" action="/users/signup">
 
-    <% if ( error && error.user ) { %>
-      <h4 class="text-center" style="color:red;"><%= error.user %></h4>
-      <a href="/auth/signin" class="btn btn-block btn-primary mb-4 text-center">Login</a>
-    <% } %>
+    <div class="card">
+      <div class="card-body">
 
-    <div class="form-group">
-      <input class="form-control"
-        type="text"
-        name="username"
-        placeholder="Username." />
-    </div>
+        <% if ( error && error.user ) { %>
 
-    <div class="form-group">
-      <input class="form-control <%= error  ? 'is-invalid' : '' %>"
-        type="email"
-        name="email"
-        placeholder="Email." />
-      <% if (error) { %>
-        <div class="invalid-feedback">
-          <%= error.email %>
+          <h4 class="text-center" style="color:red;"><%= error.user %></h4>
+
+          <a href="/auth/signin" class="btn btn-block btn-warning mb-4 text-center">
+            <i class="fas fa-user"></i> Login
+          </a>
+
+        <% } %>
+
+        <div class="form-group">
+          <input class="form-control"
+            type="text"
+            name="username"
+            placeholder="Username." />
         </div>
-      <% } %>
-    </div>
 
-
-
-    <div class="form-group">
-      <input type="password"
-        class="form-control <%= error  ? 'is-invalid' : '' %>"
-        placeholder="Password."
-        name="password">
-      <% if (error) { %>
-        <div class="invalid-feedback">
-          <%= error.password %>
+        <div class="form-group">
+          <input class="form-control <%= error  ? 'is-invalid' : '' %>"
+            type="email"
+            name="email"
+            placeholder="Email." />
+          <% if (error) { %>
+            <div class="invalid-feedback">
+              <%= error.email %>
+            </div>
+          <% } %>
         </div>
-      <% } %>
-    </div>
 
-    <div class="text-center">
-      <button class="btn btn-primary">Inscription</button>
-      <a href="/" class="btn btn-info">Back</a>
-    </div>
 
+
+        <div class="form-group">
+          <input type="password"
+            class="form-control <%= error  ? 'is-invalid' : '' %>"
+            placeholder="Password."
+            name="password">
+          <% if (error) { %>
+            <div class="invalid-feedback">
+              <%= error.password %>
+            </div>
+          <% } %>
+        </div>
+
+        
+          <button class="btn btn-primary btn-block mb-2">
+            <i class="fas fa-sign-in-alt"></i> Subscribe
+          </button>
+          <a href="/" class="btn btn-block btn-dark float-left">
+            <i class="fas fa-arrow-left"></i> Home
+          </a>
+        
+      </div>
+    </div>
   </form>
 </div>
