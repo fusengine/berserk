@@ -113,13 +113,13 @@ module.exports = {
 	 * @param {String} password add password user email to authenticate on your host
 	 */
 	mailer: {
-		from: 'Berserk Mail <noreply@fuseboat.co>',
-		host: 'mail.fuseboat.co',
+		from: 'Berserk Mail <>',
+		host: '',
 		port: 587,
 		secure: false,
 		auth: {
-			user: 'noreply@fuseboat.co',
-			password: 'DeZeD7879*',
+			user: '',
+			password: '',
 		},
 	},
 }
