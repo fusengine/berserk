@@ -2,3 +2,4 @@ node_modules
 .DS_Store
 yarn.lock
 src/config/app.config.js
+src/exemple.env.js
