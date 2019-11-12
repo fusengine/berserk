@@ -2,7 +2,7 @@ const { app, berserkUtils } = require('@fusengine/berserk-engine')
 const session = require('express-session')
 
 /** config file */
-const { sessionOption } = require('../app.config')
+const { sessionOption } = require('ENV_FILE_CONF')
 
 /**
  * Cookie
@@ -11,5 +11,5 @@ const { sessionOption } = require('../app.config')
 app.use(session(sessionOption))
 
 if (process.env.NODE_ENV === 'development') {
-	berserkUtils.successMessage('Session: session loaded in app.config.js')
+	berserkUtils.successMessage('Session: session loaded')
 }

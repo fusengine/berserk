@@ -2,10 +2,10 @@ const uuid = require('uuid')
 const moment = require('moment')
 
 /** Queries */
-const { registerUser, findUserPerEmail, findUserPerId } = require('Model/Queries/user.queries')
+const { registerUser, findUserPerEmail, findUserPerId } = require('Berserk/queries/user.queries')
 
 /** Model */
-const { User } = require('Model/Database')
+const { User } = require('Database')
 
 /** email */
 const EmailFactory = require('Berserk/email/EmailFactory')

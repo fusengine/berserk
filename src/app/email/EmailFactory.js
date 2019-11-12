@@ -3,7 +3,7 @@ const pug = require('pug')
 const nodemailer = require('nodemailer')
 
 /** Link to config */
-const { mailer } = require('Config/app.config')
+const { mailer } = require('ENV_FILE_CONF')
 
 class EmailFactory {
 	constructor() {

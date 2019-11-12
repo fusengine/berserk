@@ -1,4 +1,4 @@
-const { findUserPerEmail } = require('Model/Queries/user.queries')
+const { findUserPerEmail } = require('Berserk/queries/user.queries')
 
 /**
  * signForm

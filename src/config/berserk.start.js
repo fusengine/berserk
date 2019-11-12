@@ -2,7 +2,7 @@ const Berserk = require('@fusengine/berserk-engine')
 
 /** start berserk engine */
 Berserk.engine(
-	require('Config/app.config'),
+	require('ENV_FILE_CONF'),
 	[
 		require('Config/express/cookie.config'),
 		require('Config/express/session.config'),
@@ -11,6 +11,6 @@ Berserk.engine(
 		require('Config/express/static.config'),
 		require('Config/express/view.config'),
 	],
-	require('Route/api'),
-	require('Route/web')
+	require('Route/api.routeBase'),
+	require('Route/http.routeBase')
 )

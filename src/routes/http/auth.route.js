@@ -1,6 +1,6 @@
 const web = require('express').Router()
 
-const { signForm, signin, signout } = require('Controller/web/auth.controller')
+const { signForm, signin, signout } = require('Controller/http/auth.controller')
 
 /** 
  * @route	GET		/auth/signin

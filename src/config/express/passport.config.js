@@ -6,5 +6,5 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 if (process.env.NODE_ENV === 'development') {
-	berserkUtils.successMessage('Passport: passport loaded in app.config.js')
+	berserkUtils.successMessage('Passport: passport loaded')
 }

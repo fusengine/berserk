@@ -10,7 +10,7 @@ const {
 	initResetPassword,
 	resetPasswordForm,
 	sendNewPassword,
-} = require('Controller/web/user.controller')
+} = require('Controller/http/user.controller')
 
 /** 
  * @route	GET		/users/signup

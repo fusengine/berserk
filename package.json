@@ -2,9 +2,9 @@
 	"name": "berserk",
 	"version": "1.6.0",
 	"description": "Berserk Framework node from fusengine",
-	"main": "src/index.js",
+	"main": "src/config/berserk.start.js",
 	"scripts": {
-		"berserk": "nodemon index.js",
+		"berserk": "nodemon src/config/berserk.start.js",
 		"dev": "NODE_ENV=development  concurrently \"yarn run berserk\"",
 		"prod": "NODE_ENV=production  concurrently \"yarn run berserk\"",
 		"preinstall": "which link-module-alias && link-module-alias clean || echo",
@@ -28,7 +28,8 @@
 		"Berserk": "src/app",
 		"Config": "src/config",
 		"Controller": "src/app/controllers",
-		"Model": "src/app/models",
+		"Database": "src/database",
+		"ENV_FILE_CONF": "src/env.js",
 		"Public": "src/public",
 		"Route": "src/routes",
 		"Views": "src/views"

@@ -4,7 +4,7 @@ const express = require('express')
 const path = require('path')
 
 /**  */
-const { directory, pathName } = require('../app.config').assets
+const { directory, pathName } = require('ENV_FILE_CONF').assets
 
 /** Directory to assets */
 const assetsDir = path.join(__dirname, '../../../' + directory)

@@ -1,13 +1,13 @@
 const jwt = require('jsonwebtoken')
 const { app, berserkUtils } = require('@fusengine/berserk-engine')
 
-berserkUtils.successMessage('JWT: JWT in app.config.js')
+berserkUtils.successMessage('JWT: JWT loaded')
 
 /** Secret jwt */
-const SecretKeyJwt = require('../app.config').JWT.secret
+const SecretKeyJwt = require('../../env').JWT.secret
 
 /** Query */
-const { findUserPerId } = require('Model/Queries/user.queries')
+const { findUserPerId } = require('Berserk/queries/user.queries')
 
 /**
  * createJwtToken

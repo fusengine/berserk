@@ -1,4 +1,4 @@
-const { User } = require('../Database/index')
+const { User } = require('Database')
 
 /**
  * Register user
