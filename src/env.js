@@ -78,8 +78,8 @@ module.exports = {
 		useUnifiedTopology: true,
 		useCreateIndex: true,
 		useFindAndModify: false,
-		tryReconnectMongo: 5,
-		intervalReconnectMongo: 500,
+		// tryReconnectMongo: 5,
+		// intervalReconnectMongo: 500,
 	},
 
 	/**
@@ -113,13 +113,13 @@ module.exports = {
 	 * @param {String} password add password user email to authenticate on your host
 	 */
 	mailer: {
-		from: 'Berserk Mail <my@exemple.com>',
-		host: 'mail.exemple.com',
+		from: 'Berserk Mail <hello@exemple.com>',
+		host: 'smtp.exemple.com',
 		port: 587,
 		secure: false,
 		auth: {
-			user: 'my@exemple.com',
-			password: 'exemple',
+			user: 'hello@exemple.com',
+			password: 'my password',
 		},
 	},
 }

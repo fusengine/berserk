@@ -32,10 +32,15 @@ class EmailFactory {
 				}),
 			}
 			const response = await this.transporter.sendMail(email)
+
 			if (process.env.NODE_ENV === 'development') {
 				console.log(response)
 			}
 		} catch (error) {
+			if (process.env.NODE_ENV === 'development') {
+				console.log(error)
+			}
+
 			throw error
 		}
 	}
@@ -57,6 +62,10 @@ class EmailFactory {
 				console.log(response)
 			}
 		} catch (error) {
+			if (process.env.NODE_ENV === 'development') {
+				console.log(error)
+			}
+
 			throw error
 		}
 	}

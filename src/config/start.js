@@ -1,4 +1,5 @@
 const Berserk = require('@fusengine/berserk-engine')
+const { app, berserkUtils } = Berserk
 
 /** start berserk engine */
 Berserk.engine(
