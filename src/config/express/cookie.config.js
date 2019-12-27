@@ -2,7 +2,7 @@ const { app, berserkUtils } = require('@fusengine/berserk-engine')
 const cookieParser = require('cookie-parser')
 
 /** config files */
-const { cookieParserSecretKey } = require('ENV_FILE_CONF')
+const { cookieParserSecretKey } = require('ENV_FILE')
 
 /**
  * CookieParser

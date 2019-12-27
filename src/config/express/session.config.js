@@ -2,7 +2,7 @@ const { app, berserkUtils } = require('@fusengine/berserk-engine')
 const session = require('express-session')
 
 /** config file */
-const { sessionOption } = require('ENV_FILE_CONF')
+const { sessionOption } = require('ENV_FILE')
 
 /**
  * Cookie

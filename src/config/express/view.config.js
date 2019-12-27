@@ -3,7 +3,7 @@ const engine = require('ejs-mate')
 const { app, berserkUtils } = require('@fusengine/berserk-engine')
 
 /** config files */
-const { viewExtension } = require('ENV_FILE_CONF')
+const { viewExtension } = require('ENV_FILE')
 
 /** define directory */
 const joinDir = path.join(__dirname, '../../views')

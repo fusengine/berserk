@@ -1,9 +1,8 @@
 const Berserk = require('@fusengine/berserk-engine')
-const { app, berserkUtils } = Berserk
 
 /** start berserk engine */
 Berserk.engine(
-	require('ENV_FILE_CONF'),
+	require('ENV_FILE'),
 	[
 		require('Config/express/cookie.config'),
 		require('Config/express/session.config'),
