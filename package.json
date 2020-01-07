@@ -1,6 +1,6 @@
 {
 	"name": "berserk",
-	"version": "1.6.0",
+	"version": "1.6.1",
 	"description": "Berserk Framework node from fusengine",
 	"author": "Fusengine <info@fusengine.ch>",
 	"license": "MIT",
@@ -37,7 +37,7 @@
 		"Views": "src/views"
 	},
 	"dependencies": {
-		"@fusengine/berserk-engine": "^1.7.7",
+		"@fusengine/berserk-engine": "^1.7.8",
 		"bcrypt": "^3.0.7",
 		"concurrently": "^5.0.2",
 		"connect-mongo": "^3.2.0",
@@ -46,11 +46,11 @@
 		"ejs-mate": "^3.0.0",
 		"express": "^4.17.1",
 		"express-session": "^1.17.0",
-		"express-validator": "^6.3.0",
+		"express-validator": "^6.3.1",
 		"jsonwebtoken": "^8.5.1",
 		"link-module-alias": "^1.2.0",
 		"moment": "^2.24.0",
-		"mongoose": "^5.8.3",
+		"mongoose": "^5.8.5",
 		"multer": "^1.4.2",
 		"nodemailer": "^6.4.2",
 		"nodemon": "^2.0.2",
