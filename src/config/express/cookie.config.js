@@ -1,16 +1,36 @@
-const { app, berserkUtils } = require('@fusengine/berserk-engine')
-const cookieParser = require('cookie-parser')
-
-/** config files */
-const { cookieParserSecretKey } = require('ENV_FILE')
-
 /**
- * CookieParser
- * @param {String} secretCookie define signed cookie application
+ * This add cookie to berserk
  */
+let App
+let CookieParser
+let Utils
 
-app.use(cookieParser(cookieParserSecretKey))
+/** 
+ * Cookie berserk
+ * @param _app express 
+ * @param _utils Berserk utils
+ * @param _cookieParser use cookie-parser
+ */
+module.exports = (_app, _utils, _cookieParser) => {
+	App = _app
+	CookieParser = _cookieParser
+	Utils = _utils
 
-if (process.env.NODE_ENV === 'development') {
-	berserkUtils.successMessage('Cookie: cookie-parser loaded in app.config.js')
+	// Return Const
+	return Cookie
+}
+
+const Cookie = () => {
+	if (process.env.NODE_ENV === 'development') {
+		Utils.successMessage('Cookie: cookie-parser loaded in app.config.js')
+	}
+
+	/** config files */
+	const { cookieParserSecretKey } = require('ENV_FILE')
+
+	/**
+	* CookieParser
+	* @param {String} secretCookie define signed cookie application
+	*/
+	App.use(CookieParser(cookieParserSecretKey))
 }

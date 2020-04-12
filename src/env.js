@@ -93,13 +93,13 @@ module.exports = {
 	 * sessionOption
 	 */
 	sessionOption: {
-		secret: 'berserk-Key-app',
+		secret: 'berserk-key-app',
 		resave: false,
-		name: '',
+		name: 'berserk.cookie',
 		saveUninitialized: true,
 		cookie: {
 			httpOnly: true,
-			maxAge: 60000,
+			maxAge: 600000,
 		},
 	},
 

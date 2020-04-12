@@ -10,8 +10,8 @@ web.get('/', (req, res) => {
 })
 
 /** Groupe Route */
-web.use('/users', require('./http/user.route'))
-web.use('/auth', require('./http/auth.route'))
+web.use('/users', require('./web/user.route'))
+web.use('/auth', require('./web/auth.route'))
 
 /** Export Module */
 module.exports = web
